@@ -23,3 +23,13 @@ class App extends Component{
       console.log(this.state);
     });
 }
+render (){
+  return (
+    <div className="App">
+      <Header/>
+      <ChatHistory chatHistory={this.state.chatHistory}/>
+      <ChatInput  send={this.send} />
+      </div>
+  )
+}
+}

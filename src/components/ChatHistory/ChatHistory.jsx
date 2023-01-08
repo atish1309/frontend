@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import './ChatHistory.scss';
 import Message from '../Message/Message';
 
-export default ChatHistory =()=>{
-    return(
-        <div className='ChatHistory'>
+class ChatHistory extends Component{
+  render(){
+    console.log(this.props.ChatHistory)
+    const messages =this.props.ChatHistory.map(msg=><Message key={msg.timeStamp} message={msg.data} />);
+
+     return (
+      <div className='ChatHistory'>
         <h2>Chat History</h2>
         {messages}
       </div>
-    )
+    );
+  }
 }
